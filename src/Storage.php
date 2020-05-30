@@ -13,12 +13,9 @@ final class Storage
 {
     private KeyValue $storage;
 
-    private Parser $messageParser;
-
-    public function __construct(KeyValue $storage, Parser $messageParser)
+    public function __construct(KeyValue $storage)
     {
-        $this->storage       = $storage;
-        $this->messageParser = $messageParser;
+        $this->storage = $storage;
     }
 
     /**
@@ -71,7 +68,7 @@ final class Storage
                 return null;
             }
 
-            return $this->messageParser->parse((yield $this->getRegisteredCommands())[$command]);
+            return (new Parser())->parse((yield $this->getRegisteredCommands())[$command]);
         });
     }
 
