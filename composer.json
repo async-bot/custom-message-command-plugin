@@ -1,0 +1,35 @@
+{
+    "name": "async-bot/custom-message-command-plugin",
+    "description": "Custom message command plugin",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.4",
+        "amphp/amp": "^2.2.0",
+        "async-bot/core": "dev-master"
+    },
+    "require-dev": {
+        "infection/infection": "^0.13.4",
+        "maglnet/composer-require-checker": "^2.0",
+        "phpunit/phpunit": "^8.3",
+        "slevomat/coding-standard": "^5.0.4",
+        "squizlabs/php_codesniffer": "^3.4.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "AsyncBot\\Plugin\\CustomMessageCommand\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AsyncBot\\Plugin\\CustomMessageCommandTest\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
